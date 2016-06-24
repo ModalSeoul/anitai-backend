@@ -1,0 +1,17 @@
+database:
+  image: postgres
+  environment:
+    - POSTGRES_USER=anitai
+    - POSTGRES_PASSWORD=anitai
+backend:
+  build: .
+  command: bash /anitai/server/django_devserver.sh
+  volumes:
+  - .:/anitai
+  links:
+  - database
+  ports:
+  - "8000:8000"
+  environment:
+    DB_HOST: database
+    PYTHONUNBUFFERED: 1
