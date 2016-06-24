@@ -18,7 +18,7 @@ from apps.character.views import CharacterViewSet
 
 admin.site.site_title = admin.site.index_title = "anitai backend"
 admin.site.site_header = mark_safe('<img src="{img}" alt="{alt}"/>'.format(
-    img=settings.STATIC_URL + 'admin/img/logo-140x60.png',
+    img='http://i.imgur.com/CmYcX9i.png',
     alt=admin.site.site_title,
 ))
 

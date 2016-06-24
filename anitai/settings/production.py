@@ -130,7 +130,7 @@ class EmailSettings:
     BG_COLOR = "#f5f5f5"  # Material Grey 100
     CONTENT_COLOR = "#ffffff"  # White
     HIGHLIGHT_COLOR = "#f5f5f5"  # Material Grey 100
-    LOGO_URL = "http://izeni.com/static/img/izeni-shadow.png"
+    LOGO_URL = "https://i.imgur.com/w5uY0Vx.png"
     LOGO_ALT_TEXT = ""
     TERMS_URL = ""
     PRIVACY_URL = ""
@@ -140,14 +140,13 @@ class EmailSettings:
 
 
 EMAIL = EmailSettings()
-EMAIL_BACKEND = os.environ.get(
-    'EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_HOST_PORT = os.environ.get('EMAIL_HOST_PORT')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = bool(os.environ.get('EMAIL_USE_TLS'))
-DEFAULT_FROM_EMAIL = 'admin@{}'.format(SITE_DOMAIN)
+EMAIL_BACKEND = 'django_ses_backend.SESBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PORT = 587
+EMAIL_HOST_USER = 'alaygrow@gmail.com'
+EMAIL_HOST_PASSWORD = 'zugzwang17'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'admin@{}'.format('anitai.faith')
 
 # General
 MANAGERS = ADMINS = (
