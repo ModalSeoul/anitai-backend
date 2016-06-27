@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'apps.show',
     'apps.image',
     'apps.character',
+    'apps.announcement'
 )
 
 # Domain configuration

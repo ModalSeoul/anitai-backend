@@ -12,6 +12,7 @@ class Img(models.Model):
     popularity = models.IntegerField(default=0)
     character = models.ForeignKey(Character)
     show = models.ForeignKey(Show)
+    upvoted = models.ManyToManyField(EmailUser, related_name='upvotes')
 
     def __str__(self):
         return self.character.name

@@ -15,6 +15,7 @@ from apps.accounts.views import UserViewSet
 from apps.show.views import ShowViewSet
 from apps.image.views import ImageViewSet
 from apps.character.views import CharacterViewSet
+from apps.announcement.views import AnnouncementViewSet
 
 admin.site.site_title = admin.site.index_title = "anitai backend"
 admin.site.site_header = mark_safe('<img src="{img}" alt="{alt}"/>'.format(
@@ -27,6 +28,8 @@ router.register(r'users', UserViewSet, base_name='users')
 router.register(r'shows', ShowViewSet, base_name='shows')
 router.register(r'images', ImageViewSet, base_name='images')
 router.register(r'characters', CharacterViewSet, base_name='characters')
+router.register(r'announcements', AnnouncementViewSet,
+                base_name='announcements')
 
 urlpatterns = [
     url(r'^favicon.ico$', RedirectView.as_view(
